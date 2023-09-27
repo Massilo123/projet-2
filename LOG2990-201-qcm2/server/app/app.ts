@@ -1,7 +1,7 @@
 import { HttpException } from '@app/classes/http.exception';
 import { DateController } from '@app/controllers/date.controller';
 import { ExampleController } from '@app/controllers/example.controller';
-import { QcmController } from '@app/controllers/qcm.controller'; // <-- Ajoutez cette ligne
+import { QcmController } from '@app/controllers/qcm.controller';
 import * as cookieParser from 'cookie-parser';
 import * as cors from 'cors';
 import * as express from 'express';
@@ -9,8 +9,8 @@ import { StatusCodes } from 'http-status-codes';
 import * as swaggerJSDoc from 'swagger-jsdoc';
 import * as swaggerUi from 'swagger-ui-express';
 import { Service } from 'typedi';
-
-
+import { Container } from 'typedi';
+Container.set(QcmController, new QcmController());
 @Service()
 export class Application {
     app: express.Application;
@@ -20,7 +20,7 @@ export class Application {
     constructor(
         private readonly exampleController: ExampleController,
         private readonly dateController: DateController,
-        private readonly qcmController: QcmController,
+        private readonly qcmController: QcmController
     ) {
         this.app = express();
 
@@ -36,7 +36,6 @@ export class Application {
         };
 
         this.config();
-
         this.bindRoutes();
     }
 
@@ -79,7 +78,7 @@ export class Application {
         }
 
         // production error handler
-        // no stacktraces  leaked to user (in production env only)
+        // no stacktraces leaked to user (in production env only)
         this.app.use((err: HttpException, req: express.Request, res: express.Response) => {
             res.status(err.status || this.internalError);
             res.send({
@@ -89,3 +88,4 @@ export class Application {
         });
     }
 }
+
