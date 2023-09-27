@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .background-and-principal-frame {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden
+  }
+
+  
+  .logo {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .image-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .noms-des-membres {
+    position: absolute;
+    bottom: 1%;
+    left: 17%;
+    color: white;
+    font-size: 24px;
+    font-family: Rubik;
+    font-style: italic;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  
+  .bouton-joindre-une-partie, .bouton-creer-une-partie {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    border-radius: 20px;
+    cursor : pointer;
+  }
+
+  .bouton-joindre-une-partie {
+    width: 29%;
+    height: 12%;
+    left: 37%;
+    top: 59%;
+    background: #0044F4;
+    text-decoration-color:white;
+    color:white;
+    font-size:35px;
+    font-family:Exo;
+    font-weight: 800;
+    letter-spacing: 4.38px;
+    word-wrap: break-word;
+  }
+
+  .bouton-creer-une-partie {
+    width: 20%;
+    height: 9%;
+    left: 42%;
+    top: 72%;
+    background: white;
+    text-decoration-color:white;
+    color:#0044F4;
+    font-size:32px;
+    font-family:Exo;
+    font-weight: 700;
+    letter-spacing: 4px;
+    word-wrap: break-word;
+  }
+
+  //style="width: 359.54px; height: 38.04px; text-align: center; color: #0044F4; font-size: 32px; font-family: Exo; font-weight: 700; letter-spacing: 4px; word-wrap: break-word">Créer une partie</div>
+  
+
+
+ /* Main button container */
+.bouton-administrer-les-jeux {
+    position: absolute;
+    top: 1.5%;
+    right: 3%;
+    width: 406px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    cursor : pointer;
+  }
+  
+  /* Background of the button */
+  .background-du-bouton-administrer-les-jeux {
+    width: 332px;
+    height: 64px;
+    position: absolute;
+    left: 74px;
+    top: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background: white;
+  }
+  
+  /* Text within the button */
+  .administrer-les-jeux {
+    position: absolute;
+    left: 92px;
+    top: 32px;
+    color: black;
+    font-size: 26px;
+    font-family: Exo;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+  
+  /* Image within the button */
+  .image-outils {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 344px;
+    top: 23px;
+  }
+  
+
+  /* Hover effect for .bouton-joindre-une-partie */
+.bouton-joindre-une-partie:hover {
+    background: #0033C4; /* Slightly darker shade for hover */
+    transition: background 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for .bouton-creer-une-partie */
+.bouton-creer-une-partie:hover {
+    background: #d9d9d9; /* Light gray for hover */
+    transition: background 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for .bouton-administrer-les-jeux  */
+.background-du-bouton-administrer-les-jeux:hover {
+    background: #d9d9d9; /* Light gray for hover */
+    transition: background 0.3s; /* Smooth transition */
+}

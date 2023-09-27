@@ -1,0 +1,37 @@
+[
+    {
+        "gameName": "Nom du jeu 1",
+        "gameDescription": "Description du jeu 1",
+        "questionTime": "temps du jeu",
+        "questions": [
+            {
+                "text": "Question 1",
+                "points": "point",
+                "choices": [
+                    {
+                        "text": "Réponse 1",
+                        "isCorrect": true
+                    },
+                    {
+                        "text": "Réponse 2",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "text": "Question 2",
+                "points": "point",
+                "choices": [
+                    {
+                        "text": "Réponse 1",
+                        "isCorrect": false
+                    },
+                    {
+                        "text": "Réponse 2",
+                        "isCorrect": true
+                    }
+                ]
+            }
+        ]
+    }
+]

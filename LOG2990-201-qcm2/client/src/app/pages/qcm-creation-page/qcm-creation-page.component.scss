@@ -1,0 +1,59 @@
+#position-display {
+    border: 1px dashed blue;
+}
+#jeux {
+    display: flex;
+    flex-direction: column;
+}
+
+#game-info {
+}
+
+input[type='text'],
+input[type='number'] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 2px solid #4b1f6a;
+    border-radius: 15px;
+}
+
+/* Style des boutons dans la liste de questions */
+li button {
+    background-color: #4b1f6a;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+li button:hover {
+    background-color: white;
+    color: #4b1f6a;
+    border: 2px solid #4b1f6a;
+}
+
+#liste_questions {
+    justify-content: center;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+}
+
+.input_question {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    padding: 10px;
+}
+
+.input_point {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    padding: 10px;
+}

@@ -1,0 +1,169 @@
+{
+    "$schema": "quiz-schema.json",
+    "id": "1a2b3c",
+    "title": "Questionnaire sur le JS",
+    "duration": 20,
+    "lastModification": "2018-11-13T20:20:39+00:00",
+    "questions": [
+        {
+            "type": "QCM",
+            "text": "Parmi les mots suivants, lesquels sont des mots clés réservés en JS?",
+            "points": 40,
+            "choices": [
+                {
+                    "text": "var",
+                    "isCorrect": true
+                },
+                {
+                    "text": "self",
+                    "isCorrect": false
+                },
+                {
+                    "text": "this",
+                    "isCorrect": true
+                },
+                {
+                    "text": "int",
+                    "isCorrect": false
+                }
+            ]
+        },
+        
+        {
+            "type": "QCM",
+            "text": "Est-ce que le code suivant lance une erreur : const a = 1/NaN; ? ",
+            "points": 20,
+            "choices": [
+                {
+                    "text": "Non",
+                    "isCorrect": true
+                },
+                {
+                    "text": "Oui",
+                    "isCorrect": false
+                }
+            ]
+        },
+
+        {
+            "type": "QCM",
+            "text": "Quelle est la sortie de `console.log(1 + '1')` en JavaScript ?",
+            "points": 20,
+            "choices": [
+              {
+                "text": "2",
+                "isCorrect": false
+              },
+              {
+                "text": "'11'",
+                "isCorrect": true
+              },
+              {
+                "text": "11",
+                "isCorrect": false
+              },
+              {
+                "text": "Erreur",
+                "isCorrect": false
+              }
+            ]
+          },
+
+          {
+            "type": "QCM",
+            "text": "Quelle méthode JavaScript est utilisée pour trier un tableau ?",
+            "points": 30,
+            "choices": [
+              {
+                "text": "sort()",
+                "isCorrect": true
+                
+              },
+              {
+                "text": "order()",
+                "isCorrect": false
+              },
+              {
+                "text": "arrange()",
+                "isCorrect": false
+              },
+              {
+                "text": "shuffle()",
+                "isCorrect": false
+              }
+            ]
+          },
+
+          {
+            "type": "QCM",
+            "text": "Quelle déclaration de variable est utilisée pour créer une variable globale en JavaScript ?",
+            "points": 25,
+            "choices": [
+              {
+                "text": "let",
+                "isCorrect": false
+              },
+              {
+                "text": "const",
+                "isCorrect": false
+              },
+              {
+                "text": "var",
+                "isCorrect": true
+              },
+              {
+                "text": "global",
+                "isCorrect": false
+              }
+            ]
+          },
+
+          {
+            "type": "QCM",
+            "text": "Quelle méthode JavaScript est utilisée pour supprimer le dernier élément d'un tableau ?",
+            "points": 30,
+            "choices": [
+              {
+                "text": "pop()",
+                "isCorrect": true
+              },
+              {
+                "text": "removeLast()",
+                "isCorrect": false
+              },
+              {
+                "text": "deleteLast()",
+                "isCorrect": false
+              },
+              {
+                "text": "splice()",
+                "isCorrect": false
+              }
+            ]
+          },
+
+          {
+            "type": "QCM",
+            "text": "Quelle est la portée (scope) d'une variable déclarée avec le mot-clé `const` en JavaScript ?",
+            "points": 25,
+            "choices": [
+              {
+                "text": "Locale",
+                "isCorrect": false
+              },
+              {
+                "text": "Globale",
+                "isCorrect": false
+              },
+              {
+                "text": "De bloc (block)",
+                "isCorrect": false
+              },
+              {
+                "text": "De fonction (function)",
+                "isCorrect": true
+              }
+            ]
+          }
+    ]
+}

@@ -1,0 +1,43 @@
+<div class="game=container">
+    <div class="question">
+    <app-question [question]="currentQuestion"></app-question>
+    </div>
+    <div class="answer">
+        <app-reponse [question]="currentQuestion"></app-reponse>
+    </div>
+    <div class="score">
+        <p>Pointage: {{ score }}</p>
+    </div>
+    <div class="countdown">
+        <app-countdown [duration]="quizDuration" (timeUp) = "autoFinalizeChoices()" (timeUp) = "checkAndIncreaseScore()" 
+        (timeUp) = "moveToNextQuestion()"
+        *ngIf="quizDuration !== undefined"></app-countdown>
+    </div>
+    <div class="quit-button">
+        <button (click)="quitGame()">Abandonner</button>
+    </div>
+</div>
+
+
+
+
+
+
+<!--
+    <div id="grid-container">
+    <p>Section de jeu!</p>
+    <section id="timer-container">
+        <h2>Débutez une minuterie de 5 secondes</h2>
+        <button (click)="mouseHitDetect($event)">Commencer</button>
+        <p *ngIf="time">Temps restant : {{ time }}</p>
+    </section>
+
+    <div id="position-display">
+        <p>Appuyez sur une touche du clavier pour la détecter</p>
+        <p *ngIf="buttonPressed !== ''">Touche : {{ buttonPressed }}</p>
+    </div>
+
+</div>
+-->
+
+

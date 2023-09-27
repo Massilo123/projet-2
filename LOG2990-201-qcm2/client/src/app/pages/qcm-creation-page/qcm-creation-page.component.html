@@ -1,0 +1,82 @@
+<div id="grid-container">
+    <div id="jeux">
+        <section id="game-info">
+            <h2>Informations sur le jeu</h2>
+
+            <label for="gameName">Nom :</label>
+            <input type="text" id="gameName" [(ngModel)]="gameName" required />
+
+            <label for="gameDescription">Description :</label>
+            <input type="text" id="gameDescription" [(ngModel)]="gameDescription" required />
+
+            <label for="questionTime">Temps par question :</label>
+            <input type="text" id="questionTime" [(ngModel)]="questionTime" required />
+        </section>
+
+        <div id="liste_questions">
+            <h2>Liste de questions</h2>
+            <div class="input">
+                <div class="input_question">
+                    <input
+                        type="text"
+                        [(ngModel)]="nouvelleQuestion"
+                        (keyup.enter)="ajouterQuestion()"
+                        placeholder="Entrez une question et appuyez sur Enter"
+                    />
+                </div>
+
+                <div class="input_point">
+                    <input type="number" [(ngModel)]="pointQuestion" (keyup.enter)="ajouterQuestion()" min="10" max="100" step="10" />
+                </div>
+            </div>
+            <div *ngFor="let i of tableauReponse">
+                <input type="text" [placeholder]="'Réponse ' + (i + 1)" />
+            </div>
+            <ul>
+                <li *ngFor="let question of questions; let i = index">
+                    <div *ngIf="enEdition !== i">
+                        Question {{ i }} : {{ getTruncatedText(question.nouvelleQuestion) }} <br />
+                        La question vaut : {{ question.pointQuestion }} points
+                        <button (click)="supprimerQuestion(i)">Supprimer</button>
+                        <button (click)="toggleEdition(i)">Modifier</button>
+                        <button *ngIf="i > 0" (click)="changerOrdre(i, i - 1)">Monter</button>
+                        <button *ngIf="i < questions.length - 1" (click)="changerOrdre(i, i + 1)">Descendre</button>
+                        <button (click)="ajouterChoix(i)">Ajouter un choix</button>
+                        <div *ngFor="let choix of question.choix; let j = index">
+                            <ng-container *ngIf="!choix.confirmed; else confirmedChoice">
+                                <p>Choix {{ j + 1 }} :</p>
+                                <input type="text" [(ngModel)]="choix.texte" placeholder="Réponse {{ j + 1 }}" />
+                                <select [(ngModel)]="choix.status">
+                                    <option value="Bon">Bon</option>
+                                    <option value="Mauvais">Mauvais</option>
+                                </select>
+                                <button (click)="supprimerChoix(i, j)">Supprimer</button>
+                                <button (click)="confirmChoice(i, j)">Confirmer</button>
+                            </ng-container>
+                            <ng-template #confirmedChoice>
+                                <p>Réponse confirmée : {{ choix.texte }}</p>
+                                <button (click)="modifyChoice(i, j)">Modifier</button>
+                                <button *ngIf="j > 0" (click)="moveChoice(i, j, j - 1)">Monter</button>
+                                <button *ngIf="j < question.choix.length - 1" (click)="moveChoice(i, j, j + 1)">Descendre</button>
+                            </ng-template>
+                        </div>
+                    </div>
+                    <div *ngIf="enEdition === i">
+                        <input type="text" [(ngModel)]="questions[i].nouvelleQuestion" placeholder="Nouveau nom" />
+                        <input
+                            type="number"
+                            [(ngModel)]="questions[i].pointQuestion"
+                            placeholder="Nouveau nombre de points"
+                            min="10"
+                            max="100"
+                            step="10"
+                        />
+                        <button (click)="appliquerModification()">Appliquer</button>
+                        <button (click)="annulerModification()">Annuler</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <button (click)="enregistrer()">Enregistrer</button>
+</div>

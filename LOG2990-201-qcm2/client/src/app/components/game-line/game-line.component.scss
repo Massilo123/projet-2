@@ -1,0 +1,32 @@
+.game-line {
+    display: flex;
+    flex-direction: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    margin: 10px;
+    max-width: 100%;
+}
+
+.title-and-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title {
+    margin-right: 10px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: space-between;
+    align-items: center;
+    margin-left: 400px;
+}
+
+button {
+    margin: 5px;
+}

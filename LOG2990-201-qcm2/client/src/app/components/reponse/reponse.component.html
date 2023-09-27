@@ -1,0 +1,10 @@
+<div class="answer-container">
+    <div *ngFor="let choice of question.choices; let i = index" class="choice" [tabIndex]="0" (keydown)="handleChoiceKeyPress($event, i)">
+      <label>
+        {{ i + 1 }}. {{ choice.text }}
+        <input type="checkbox" [(ngModel)]="selectedChoices[i]" [disabled]="isFinalized || isTimeUp">
+      </label>
+    </div>
+    <button (click)="finalizeAnswer()" [disabled]="isFinalized || isTimeUp">Finaliser</button>
+  </div>
+  
