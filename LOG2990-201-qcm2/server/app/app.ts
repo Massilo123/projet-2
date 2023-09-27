@@ -1,6 +1,7 @@
 import { HttpException } from '@app/classes/http.exception';
 import { DateController } from '@app/controllers/date.controller';
 import { ExampleController } from '@app/controllers/example.controller';
+import { QcmController } from '@app/controllers/qcm.controller'; // <-- Ajoutez cette ligne
 import * as cookieParser from 'cookie-parser';
 import * as cors from 'cors';
 import * as express from 'express';
@@ -8,6 +9,7 @@ import { StatusCodes } from 'http-status-codes';
 import * as swaggerJSDoc from 'swagger-jsdoc';
 import * as swaggerUi from 'swagger-ui-express';
 import { Service } from 'typedi';
+
 
 @Service()
 export class Application {
@@ -18,6 +20,7 @@ export class Application {
     constructor(
         private readonly exampleController: ExampleController,
         private readonly dateController: DateController,
+        private readonly qcmController: QcmController,
     ) {
         this.app = express();
 
@@ -41,6 +44,7 @@ export class Application {
         this.app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerJSDoc(this.swaggerOptions)));
         this.app.use('/api/example', this.exampleController.router);
         this.app.use('/api/date', this.dateController.router);
+        this.app.use('/api/qcm', this.qcmController.router);
         this.app.use('/', (req, res) => {
             res.redirect('/api/docs');
         });
